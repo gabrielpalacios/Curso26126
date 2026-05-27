@@ -1,0 +1,314 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERAL */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #111;
+    color: white;
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+.hero {
+    background-image: url("gaming-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* NAV */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 15px 30px;
+
+    background-color: rgba(0, 0, 0, 0.85);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    color: #00ffcc;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00ffcc;
+}
+
+/* HERO */
+
+.hero-content {
+    text-align: center;
+    margin-top: 220px;
+}
+
+.hero-content h2 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 22px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* PRODUCTOS */
+
+.productos {
+    padding: 80px 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.productos h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 42px;
+}
+
+.card {
+    background-color: #1f1f1f;
+    width: 260px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px 0;
+}
+
+.card p {
+    padding: 0 10px;
+}
+
+.card button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #00ffcc;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* NOSOTROS */
+
+/* .nosotros {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #181818;
+}
+
+.nosotros h2 {
+    margin-bottom: 20px;
+    font-size: 38px;
+} */
+
+.nosotros {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #181818;
+}
+
+.nosotros h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #00ffcc;
+}
+
+.nosotros p {
+    max-width: 1000px;
+    margin: 10px auto;
+    font-size: 18px;
+}
+
+
+
+
+/* OPINIONES */
+
+.opiniones {
+    padding: 80px 20px;
+}
+
+.opiniones h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 38px;
+}
+
+/* GRID */
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+blockquote {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-left: 5px solid #00ffcc;
+    border-radius: 10px;
+}
+
+/* CONTACTO */
+
+.contacto {
+    padding: 80px 20px;
+    background-color: #181818;
+}
+
+.contacto h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 38px;
+}
+
+.contacto form {
+    max-width: 500px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contacto input,
+.contacto textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contacto button {
+    padding: 12px;
+    border: none;
+    background-color: #00ffcc;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+/* HAMBURGER */
+
+.hamburger {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+        background-color: rgba(0,0,0,0.95);
+        padding: 15px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+    }
+
+    .hero-content {
+        margin-top: 180px;
+    }
+
+    .hero-content h2 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .productos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contacto form {
+        width: 100%;
+    }
+}
+section {
+    scroll-margin-top: 60px;
+}

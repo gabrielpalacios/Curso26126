@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroGames Store</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="hero">
+
+        <nav class="nav">
+
+            <h1 class="logo">RetroGames Store</h1>
+
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Consolas</a>
+                <a href="#opiniones">Opiniones</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+
+        </nav>
+
+        <section id="inicio" class="hero-content">
+            <h2>Las mejores consolas clásicas y modernas</h2>
+
+            <p>
+                Encuentra consolas retro, edición limitada y videojuegos clásicos
+                para volver a vivir la mejor época gamer.
+            </p>
+
+        </section>
+
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- PRODUCTOS -->
+        <section id="productos" class="productos">
+
+            <h2>Nuestras Consolas</h2>
+
+            <div class="card">
+                <img src="gamecube.jpg" alt="Nintendo GameCube">
+                <h3>Nintendo GameCube</h3>
+                <p>La clásica consola cúbica de Nintendo.</p>
+                <button>Comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="ps2.jpg" alt="PlayStation 2">
+                <h3>PlayStation 2</h3>
+                <p>La consola más vendida de la historia.</p>
+                <button>Comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="xbox360.jpg" alt="Xbox 360">
+                <h3>Xbox 360</h3>
+                <p>Potencia y grandes exclusivos.</p>
+                <button>Comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="switch.jpg" alt="Nintendo Switch">
+                <h3>Nintendo Switch</h3>
+                <p>Juega donde quieras.</p>
+                <button>Comprar</button>
+            </div>
+
+        </section>
+
+        <!-- NOSOTROS -->
+        <section class="nosotros">
+
+            <h2>¿Quiénes somos?</h2>
+
+            <p>
+                <strong> Tu tienda gamer favorita ;-) </strong>
+                <br><br>
+                En RetroGames Store encontrarás consolas clásicas y modernas, accesorios y videojuegos para todas las generaciones.
+                <br>
+                Desde Nintendo GameCube hasta PlayStation y Xbox, tenemos todo para los verdaderos fanáticos del gaming. 
+                <br>
+                Nuestro objetivo es acercar la mejor experiencia gamer con productos de calidad y excelente atención.
+                 <br>
+                Somos apasionados de los videojuegos y las consolas retro.
+            </p>
+
+        </section>
+
+        <!-- RESEÑAS -->
+        <section id="opiniones" class="opiniones">
+
+            <h2>Opiniones de clientes</h2>
+
+            <div class="reviews-grid">
+
+                <blockquote>
+                    <p>"Excelente atención y productos impecables."</p>
+                    <cite>- Lucas</cite>
+                </blockquote>
+
+                <blockquote>
+                    <p>"La GameCube llegó perfecta y funcionando."</p>
+                    <cite>- Martín</cite>
+                </blockquote>
+
+                <blockquote>
+                    <p>"Muy buenos precios y envíos rápidos."</p>
+                    <cite>- Sofía</cite>
+                </blockquote>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="contacto">
+
+            <h2>Contáctanos</h2>
+
+            <form action="https://formspree.io/f/xbdbqyew" method="POST">
+
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+
+                <input type="email" name="email" placeholder="Tu email" required>
+
+                <textarea name="message" placeholder="Escribe tu mensaje" required></textarea>
+
+                <button type="submit">Enviar</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 RetroGames Store - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+
+        function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("show");
+        }
+
+        // Auto cerrar menú al hacer clic
+
+        const navLinks = document.querySelectorAll(".nav-links a");
+
+        navLinks.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                document.getElementById("navLinks").classList.remove("show");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
