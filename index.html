@@ -28,6 +28,23 @@
                 <a href="#productos">Consolas</a>
                 <a href="#opiniones">Opiniones</a>
                 <a href="#contacto">Contacto</a>
+                
+                <!-- boton del carrito -->
+                <a href="javascript:void(0)" class="cart-btn" onclick="toggleCart()">
+                    🛒 Carrito (<span id="cartCount">0</span>)
+                </a>
+            </div>
+
+            <!-- container del login -->
+            <div class="login-container">
+                <div id="loginFormInline">
+                    <input type="text" id="userLogin" placeholder="Usuario">
+                    <button onclick="login()">Entrar</button>
+                </div>
+                <span id="userPanel" style="display:none;">
+                    <span id="userName"></span>
+                    <button onclick="logout()" class="btn-logout">Salir</button>
+                </span>
             </div>
 
         </nav>
@@ -44,7 +61,6 @@
 
     </header>
 
-    <!-- MAIN -->
     <main>
 
         <!-- PRODUCTOS -->
@@ -56,28 +72,32 @@
                 <img src="gamecube.jpg" alt="Nintendo GameCube">
                 <h3>Nintendo GameCube</h3>
                 <p>La clásica consola cúbica de Nintendo.</p>
-                <button>Comprar</button>
+                <p class="precio">$120</p>
+                <button onclick="addToCart('Nintendo GameCube', 120)">Comprar</button>
             </div>
 
             <div class="card">
                 <img src="ps2.jpg" alt="PlayStation 2">
                 <h3>PlayStation 2</h3>
                 <p>La consola más vendida de la historia.</p>
-                <button>Comprar</button>
+                <p class="precio">$90</p>
+                <button onclick="addToCart('PlayStation 2', 90)">Comprar</button>
             </div>
 
             <div class="card">
                 <img src="xbox360.jpg" alt="Xbox 360">
                 <h3>Xbox 360</h3>
                 <p>Potencia y grandes exclusivos.</p>
-                <button>Comprar</button>
+                <p class="precio">$110</p>
+                <button onclick="addToCart('Xbox 360', 110)">Comprar</button>
             </div>
 
             <div class="card">
                 <img src="switch.jpg" alt="Nintendo Switch">
                 <h3>Nintendo Switch</h3>
                 <p>Juega donde quieras.</p>
-                <button>Comprar</button>
+                <p class="precio">$300</p>
+                <button onclick="addToCart('Nintendo Switch', 300)">Comprar</button>
             </div>
 
         </section>
@@ -153,27 +173,20 @@
         <p>© 2026 RetroGames Store - Todos los derechos reservados</p>
     </footer>
 
-    <script>
+    <!-- PANEL CARRITO LATERAL -->
+    <div id="cartPanel" class="cart-panel">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button onclick="toggleCart()" class="close-cart">×</button>
+        </div>
+        <ul id="cartList"></ul>
+        <div class="cart-footer">
+            <h3>Total: $<span id="cartTotal">0</span></h3>
+            <button onclick="checkout()" class="btn-checkout">Finalizar Compra</button>
+        </div>
+    </div>
 
-        function toggleMenu() {
-        document.getElementById("navLinks").classList.toggle("show");
-        }
-
-        // Auto cerrar menú al hacer clic
-
-        const navLinks = document.querySelectorAll(".nav-links a");
-
-        navLinks.forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                document.getElementById("navLinks").classList.remove("show");
-
-            });
-
-        });
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
